@@ -1,20 +1,20 @@
 services:
   backend:
     build: ./backend
-    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-local}/dexxter-backend:latest
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-local}/dexxter-app1-backend:latest
     ports:
-      - "3000:3000"
+      - "8080:8080"
     env_file:
       - .env
     restart: unless-stopped
 
   frontend:
     build: ./frontend
-    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-local}/dexxter-frontend:latest
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-local}/dexxter-app1-frontend:latest
     ports:
-      - "80:3000"
+      - "3000:3000"
     depends_on:
       - backend
     environment:
-      - NUXT_PUBLIC_API_BASE=http://backend:3000
+      - NUXT_PUBLIC_API_BASE=http://localhost:8080
     restart: unless-stopped
