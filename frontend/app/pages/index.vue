@@ -5,7 +5,7 @@
     <p class="text-gray-500 text-sm">
       API status:
       <span :class="healthy ? 'text-green-600' : 'text-red-500'" class="font-semibold">
-        {{ healthy === null ? 'checking…' : healthy ? 'reachable ✓' : 'unreachable ✗' }}
+        {{ healthy === null ? 'checking...' : healthy ? 'reachable ✓' : 'unreachable ✗' }}
       </span>
     </p>
   </div>
