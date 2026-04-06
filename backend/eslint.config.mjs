@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import globals from 'globals';
 
 export default [
+  { ignores: ['node_modules/'] },
   js.configs.recommended,
   {
     languageOptions: {
@@ -10,13 +11,10 @@ export default [
       },
     },
     rules: {
-      'no-unused-vars': 'error',
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       'no-console': 'warn',
       quotes: ['error', 'single'],
       semi: ['error', 'always'],
     },
-  },
-  {
-    ignores: ['node_modules/'],
   },
 ];
