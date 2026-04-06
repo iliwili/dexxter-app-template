@@ -1,7 +1,7 @@
 services:
   backend:
     build: ./backend
-    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-local}/dexxter-app1-backend:latest
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-local}/app-name-backend:latest
     ports:
       - "8080:8080"
     env_file:
@@ -10,7 +10,7 @@ services:
 
   frontend:
     build: ./frontend
-    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-local}/dexxter-app1-frontend:latest
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-local}/app-name-frontend:latest
     ports:
       - "3000:3000"
     depends_on:

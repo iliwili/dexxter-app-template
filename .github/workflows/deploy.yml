@@ -8,8 +8,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  BACKEND_IMAGE: ghcr.io/${{ github.repository_owner }}/dexxter-app1-backend
-  FRONTEND_IMAGE: ghcr.io/${{ github.repository_owner }}/dexxter-app1-frontend
+  BACKEND_IMAGE: ghcr.io/${{ github.repository_owner }}/app-name-backend
+  FRONTEND_IMAGE: ghcr.io/${{ github.repository_owner }}/app-name-frontend
 
 jobs:
   build-and-push:

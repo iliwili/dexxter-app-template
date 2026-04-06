@@ -1,5 +1,5 @@
 {
-  "name": "dexxter-app1-backend",
+  "name": "app-name-backend",
   "version": "1.0.0",
   "description": "Express API backend",
   "main": "server.js",
