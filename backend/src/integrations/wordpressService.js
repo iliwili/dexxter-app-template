@@ -1,16 +1,11 @@
 //
-// WordPress REST API wrapper
+// WordPress REST API wrapper — OPTIONAL INTEGRATION
 //
-// This service centralises all communication with the WordPress REST API.
-// Base URL, credentials, and auth headers are sourced from environment
-// variables (WORDPRESS_URL, WORDPRESS_USER, WORDPRESS_APP_PASSWORD).
+// Copy this file to src/services/ and adapt it when your app needs to
+// communicate with the WordPress REST API.
 //
-// Usage:
-//   const wp = require('./wordpressService');
-//   const posts = await wp.getPosts();
+// Requires env vars: WORDPRESS_URL, WORDPRESS_USER, WORDPRESS_APP_PASSWORD
 //
-// Add methods here as needed (getPosts, getPage, createPost, etc.)
-// using axios configured with the WordPress Application Password auth scheme.
 
 const axios = require('axios');
 
