@@ -1,11 +1,11 @@
-# Dexxter — Full-Stack Template
+# app-name
 
 Node/Express backend + Nuxt 4 frontend, Docker Compose orchestration.
 
 ## Quick Start
 
 ```bash
-git clone <repo-url> && cd Dexxter
+git clone <repo-url> && cd app-name
 cp .env.example .env          # fill in your values
 docker compose up --build
 ```
