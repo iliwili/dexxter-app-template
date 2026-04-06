@@ -10,9 +10,9 @@ cp .env.example .env          # fill in your values
 docker compose up --build
 ```
 
-- Frontend: http://localhost:80
-- Backend API: http://localhost:3000
-- Health check: http://localhost:3000/health
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:8080
+- Health check: http://localhost:8080/health
 
 ## Local Development (without Docker)
 
@@ -28,10 +28,7 @@ cd frontend && cp .env.example .env && npm install && npm run dev
 
 | Variable | Service | Description |
 |---|---|---|
-| `PORT` | backend | Express listen port (default 3000) |
-| `WORDPRESS_URL` | backend | Base URL of WordPress site |
-| `WORDPRESS_USER` | backend | WordPress username for REST API auth |
-| `WORDPRESS_APP_PASSWORD` | backend | WordPress Application Password |
+| `PORT` | backend | Express listen port (default 8080) |
 | `API_URL` | backend | Generic external API base URL |
 | `API_KEY` | backend | Generic external API key |
 | `NUXT_PUBLIC_API_BASE` | frontend | Backend base URL visible to browser |
@@ -43,10 +40,12 @@ cd frontend && cp .env.example .env && npm install && npm run dev
 │   └── src/
 │       ├── routes/       HTTP route definitions
 │       ├── controllers/  Request handlers
-│       ├── services/     Business logic / external API wrappers
-│       └── middleware/   Express middleware
+│       ├── services/     Business logic (project-specific)
+│       ├── middleware/   Express middleware
+│       └── integrations/ Optional external API wrappers (e.g. WordPress)
 ├── frontend/      Nuxt 4 application
-│   ├── composables/  Shared Vue composables (useApi, …)
-│   └── pages/        File-based routing
+│   └── app/
+│       ├── composables/  Shared Vue composables (useApi, …)
+│       └── pages/        File-based routing
 └── .github/workflows/deploy.yml  CI/CD pipeline
 ```
