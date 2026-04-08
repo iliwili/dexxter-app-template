@@ -16,9 +16,9 @@ const client = axios.create({
   auth:
     process.env.WORDPRESS_USER && process.env.WORDPRESS_APP_PASSWORD
       ? {
-          username: process.env.WORDPRESS_USER,
-          password: process.env.WORDPRESS_APP_PASSWORD,
-        }
+        username: process.env.WORDPRESS_USER,
+        password: process.env.WORDPRESS_APP_PASSWORD,
+      }
       : undefined,
 });
 
